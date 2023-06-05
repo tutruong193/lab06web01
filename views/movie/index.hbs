@@ -1,0 +1,31 @@
+<table class="table table-bordered">
+    <tr>
+        <th colspan=" 6">MOVIE LIST</th>
+        <th>
+            <a class="btn btn-danger" href="/movies/add">Add</a>
+        </th>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <th>Actor</th>
+        <th>Director</th>
+        <th>Year</th>
+        <th>Poster</th>
+        <th>Trailer</th>
+        <th>Menu</th>
+    </tr>
+    {{#each movies}}
+    <tr>
+        <th>{{title}}</th>
+        <th>{{actor}}</th>
+        <th>{{director}}</th>
+        <th>{{year}}</th>
+        <th><img src="{{poster}}" alt="" width="150" height="200"></th>
+        <th><iframe src="https://www.youtube.com/embed/{{trailer}}" frameborder="0" width="300" height="200"></iframe></th>
+        <th>
+            <a class="btn btn-warning" href="/movies/edit/{{_id}}">Edit</a>
+            <a class="btn btn-danger" href="/movies/delete/{{_id}}" onclick="return confirm ('Do you want to detele this movie?');">Delete</a>
+        </th>
+    </tr>
+    {{/each}}
+</table>
